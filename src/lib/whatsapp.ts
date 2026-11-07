@@ -51,6 +51,17 @@ export function getWhatsAppNumber(): string | null {
   );
 }
 
+/** Human-readable form of the configured number, e.g. "+91 9876543210". */
+export function getWhatsAppDisplayNumber(): string | null {
+  const number = getWhatsAppNumber();
+  if (!number) return null;
+
+  const code = SITE_CONFIG.contact.countryCode;
+  return number.startsWith(code)
+    ? `+${code} ${number.slice(code.length)}`
+    : `+${number}`;
+}
+
 /**
  * Builds a WhatsApp chat link with a prefilled message.
  * Returns null when no valid number is configured, so callers can render a
