@@ -1,19 +1,19 @@
-import { SITE_CONFIG } from "@/constants/site";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/sections/Hero";
 
-/**
- * Temporary Foundation placeholder. Homepage sections (Navbar, Hero, ...)
- * replace this in later phases.
- */
 export default function Home() {
   return (
-    <main
-      id="main-content"
-      className="flex flex-1 flex-col items-center justify-center gap-2 px-4 text-center"
-    >
-      <h1 className="text-3xl font-extrabold text-primary">
-        {SITE_CONFIG.name}
-      </h1>
-      <p className="text-text-secondary">{SITE_CONFIG.tagline}</p>
-    </main>
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-secondary focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
+      >
+        Skip to main content
+      </a>
+      <Navbar />
+      <main id="main-content" className="flex-1">
+        <Hero />
+      </main>
+    </>
   );
 }
