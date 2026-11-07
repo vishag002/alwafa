@@ -9,12 +9,14 @@ export const SITE_CONFIG = {
   email: "gulfmanpowerhub@gmail.com",
 
   social: {
-    instagram: "",
-    facebook: "",
+    instagram: "https://www.instagram.com/gulfmanpowerhub.in/",
+    facebook: "https://www.facebook.com/profile.php?id=61596384057849",
   },
 
   contact: {
-    whatsapp: "", // Add recruitment number later
+    // TEMPORARY PLACEHOLDER - NOT a verified business number. For local development and
+    // testing only. Replace with the real recruitment number before any public deployment.
+    whatsapp: "12345467890",
     countryCode: "91",
   },
 

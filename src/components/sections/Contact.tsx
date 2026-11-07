@@ -50,15 +50,17 @@ export function Contact() {
               </ButtonLink>
             </div>
           ) : (
-            <p className="rounded-lg border border-dashed border-white/25 px-4 py-5 text-center text-base text-white/80">
-              Contact details will be available soon.
-            </p>
+            !email && (
+              <p className="rounded-lg border border-dashed border-white/25 px-4 py-5 text-center text-base text-white/80">
+                Contact details will be available soon.
+              </p>
+            )
           )}
 
           {email && (
             <div
               className={
-                whatsappUrl ? "mt-6 border-t border-white/10 pt-6" : "mt-6"
+                whatsappUrl ? "mt-6 border-t border-white/10 pt-6" : undefined
               }
             >
               <a
