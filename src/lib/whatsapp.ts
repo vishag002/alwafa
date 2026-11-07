@@ -12,7 +12,7 @@ const NATIONAL_NUMBER_LENGTH = 10;
 
 export const GENERAL_ENQUIRY_MESSAGE = `Hello ${SITE_CONFIG.name}, I would like to know about current job opportunities.`;
 
-type VacancyReference = Pick<Vacancy, "id" | "title" | "country" | "location">;
+type VacancyReference = Pick<Vacancy, "title">;
 
 /**
  * Converts a configured number into the digits-only international format that
@@ -66,12 +66,7 @@ export function buildWhatsAppUrl(
 }
 
 export function buildApplicationMessage(vacancy: VacancyReference): string {
-  return [
-    `Hello ${SITE_CONFIG.name}, I would like to apply for the following vacancy:`,
-    `Position: ${vacancy.title}`,
-    `Location: ${vacancy.location}, ${vacancy.country}`,
-    `Reference: ${vacancy.id}`,
-  ].join("\n");
+  return `Hello ${SITE_CONFIG.name}, I am interested in applying for the ${vacancy.title} vacancy. Please share more details.`;
 }
 
 /** WhatsApp application link for a vacancy, or null if unavailable. */

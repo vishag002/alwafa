@@ -1,5 +1,7 @@
+import type { JobCategoryId } from "@/types/vacancy";
+
 export interface JobCategory {
-  id: string;
+  id: JobCategoryId;
   label: string;
 }
 
@@ -15,3 +17,7 @@ export const JOB_CATEGORIES: readonly JobCategory[] = [
   { id: "hospitality", label: "Hospitality" },
   { id: "others", label: "Others" },
 ];
+
+export function getJobCategory(id: JobCategoryId): JobCategory | undefined {
+  return JOB_CATEGORIES.find((category) => category.id === id);
+}

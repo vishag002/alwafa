@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { LatestVacancies } from "@/components/sections/LatestVacancies";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1">
         <Hero />
+        <LatestVacancies />
       </main>
     </>
   );
