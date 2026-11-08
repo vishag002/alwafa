@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
   contact: {
     // TEMPORARY PLACEHOLDER - NOT a verified business number. For local development and
     // testing only. Replace with the real recruitment number before any public deployment.
-    whatsapp: "12345467890",
+    whatsapp: "8281566037",
     countryCode: "91",
   },
 

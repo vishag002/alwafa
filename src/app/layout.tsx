@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     locale: "en_IN",
   },
+  icons: {
+    icon: "/images/logo-web.webp",
+  },
 };
 
 export const viewport: Viewport = {
