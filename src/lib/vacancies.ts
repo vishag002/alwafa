@@ -20,3 +20,18 @@ export function formatSalary({ min, max, currency }: VacancySalary): string | nu
   if (min <= 0 || min === max) return `${currency} ${numberFormat.format(max)}`;
   return `${currency} ${numberFormat.format(min)} – ${numberFormat.format(max)}`;
 }
+
+const SALARY_NOT_SPECIFIED = "Salary not specified";
+
+/**
+ * Text for a vacancy's salary row: the formatted range when numeric, else the
+ * salary note (e.g. "Based on experience"), else "Salary not specified".
+ */
+export function getSalaryText(
+  salary: VacancySalary | null,
+  salaryNote?: string,
+): string {
+  return (
+    (salary && formatSalary(salary)) || salaryNote?.trim() || SALARY_NOT_SPECIFIED
+  );
+}

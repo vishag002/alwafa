@@ -73,7 +73,6 @@ export function Hero() {
             width={DESKTOP_IMAGE.width}
             height={DESKTOP_IMAGE.height}
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/hero-mobile.webp"
             width={MOBILE_IMAGE.width}

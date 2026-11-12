@@ -1,8 +1,8 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { VacanciesEmptyState } from "@/components/vacancies/VacanciesEmptyState";
-import { VacancyCard } from "@/components/vacancies/VacancyCard";
-import { VACANCIES } from "@/data/vacancies";
+import { VacancyCategoryList } from "@/components/vacancies/VacancyCategoryList";
+import { VacancyLastUpdated } from "@/components/vacancies/VacancyLastUpdated";
+import { VACANCIES, VACANCY_LAST_UPDATED } from "@/data/vacancies";
 import { getActiveVacancies } from "@/lib/vacancies";
 
 export function LatestVacancies() {
@@ -22,19 +22,9 @@ export function LatestVacancies() {
           description="Explore available employment opportunities across the UAE and other Gulf countries."
         />
 
-        <div className="mt-10">
-          {vacancies.length > 0 ? (
-            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {vacancies.map((vacancy) => (
-                <li key={vacancy.id}>
-                  <VacancyCard vacancy={vacancy} />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <VacanciesEmptyState />
-          )}
-        </div>
+        <VacancyLastUpdated date={VACANCY_LAST_UPDATED} />
+
+        <VacancyCategoryList vacancies={vacancies} />
       </Container>
     </section>
   );

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Banknote, Briefcase, MapPin, Users } from "lucide-react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { getJobCategory } from "@/data/job-categories";
-import { formatSalary } from "@/lib/vacancies";
+import { getSalaryText } from "@/lib/vacancies";
 import { buildApplicationUrl } from "@/lib/whatsapp";
 import type { Vacancy } from "@/types/vacancy";
 
@@ -34,7 +34,7 @@ export function VacancyCard({ vacancy }: VacancyCardProps) {
   const category = vacancy.categoryId
     ? getJobCategory(vacancy.categoryId)
     : undefined;
-  const salary = formatSalary(vacancy.salary);
+  const salary = getSalaryText(vacancy.salary, vacancy.salaryNote);
   const description = vacancy.description.trim();
   const titleId = `vacancy-${vacancy.id}-title`;
 
@@ -61,11 +61,9 @@ export function VacancyCard({ vacancy }: VacancyCardProps) {
         <MetaItem icon={<MapPin size={18} />} label="Location">
           {vacancy.location}, {vacancy.country}
         </MetaItem>
-        {salary && (
-          <MetaItem icon={<Banknote size={18} />} label="Salary">
-            {salary}
-          </MetaItem>
-        )}
+        <MetaItem icon={<Banknote size={18} />} label="Salary">
+          {salary}
+        </MetaItem>
         <MetaItem icon={<Users size={18} />} label="Openings">
           {vacancy.vacancies}{" "}
           {vacancy.vacancies === 1 ? "Vacancy" : "Vacancies"}

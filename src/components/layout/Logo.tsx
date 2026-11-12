@@ -1,6 +1,6 @@
 import { SITE_CONFIG } from "@/constants/site";
 
-const [BRAND_FIRST, BRAND_LAST] = ["GulfManpower", "Hub"];
+const [BRAND_FIRST, BRAND_LAST] = ["AL", "WAFA"];
 
 /**
  * Text wordmark. Swap for an <Image> once the official logo file is supplied.
@@ -16,7 +16,7 @@ export function Logo() {
         {BRAND_FIRST} <span className="text-secondary">{BRAND_LAST}</span>
       </span>
       <span className="mt-1 hidden text-[0.6875rem] font-medium text-white/70 sm:block">
-        Gulf Recruitment &amp; Manpower Services
+        Connecting Workforce to Opportunities.
       </span>
     </a>
   );

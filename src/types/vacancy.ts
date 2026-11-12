@@ -1,6 +1,10 @@
 export type VacancyCurrency = "AED" | "SAR" | "QAR";
 
-/** Ids defined in data/job-categories.ts. */
+/**
+ * Ids defined in data/job-categories.ts.
+ * Unchanged from the original model: narrowing this union is deferred until a
+ * project-wide search confirms nothing else references the other ids.
+ */
 export type JobCategoryId =
   | "construction"
   | "general-helper"
@@ -8,6 +12,9 @@ export type JobCategoryId =
   | "technicians"
   | "hospitality"
   | "others";
+
+/** Value of the category filter in Latest Job Opportunities. */
+export type VacancyFilterId = "all" | JobCategoryId;
 
 export interface VacancySalary {
   min: number;
@@ -21,7 +28,9 @@ export interface Vacancy {
   country: string;
   location: string;
   vacancies: number;
-  salary: VacancySalary;
+  salary: VacancySalary | null;
+  /** Shown when `salary` is null, e.g. "Based on experience". */
+  salaryNote?: string;
   benefits: string[];
   requirements: string[];
   description: string;

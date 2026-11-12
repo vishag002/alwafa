@@ -1,21 +1,19 @@
 export const SITE_CONFIG = {
-  name: "GulfManpower Hub",
+  name: "Alwafa",
 
   description:
     "Connecting workers with employment opportunities across the Gulf.",
 
   tagline: "Your Gateway to Gulf Employment Opportunities",
 
-  email: "gulfmanpowerhub@gmail.com",
+  email: "careers.alwafa@gmail.com",
 
   social: {
-    instagram: "https://www.instagram.com/gulfmanpowerhub.in/",
-    facebook: "https://www.facebook.com/profile.php?id=61596384057849",
+    instagram: "https://www.instagram.com/alwafa.jobs/",
+    facebook: "https://www.facebook.com/people/Al-Wafa/61596389283913/",
   },
 
   contact: {
-    // TEMPORARY PLACEHOLDER - NOT a verified business number. For local development and
-    // testing only. Replace with the real recruitment number before any public deployment.
     whatsapp: "8281566037",
     countryCode: "91",
   },

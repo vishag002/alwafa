@@ -46,8 +46,8 @@ export function WhyChooseUs() {
       <Container>
         <SectionHeading
           id="why-choose-us-heading"
-          eyebrow="Why GulfManpower Hub"
-          title="Why Choose GulfManpower Hub?"
+          eyebrow="Why Alwafa"
+          title="Why Choose Alwafa?"
           description="We help job seekers explore employment opportunities across the UAE and other Gulf countries, with clear communication and application guidance."
         />
 
